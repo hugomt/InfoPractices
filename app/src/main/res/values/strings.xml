@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">InfoPractices</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="practices_a">Neoris</string>
+    <string name="practices_b">Accenture</string>
+    <string name="practices_c">Deloitte</string>
+
+    <string name="time_a">3 meses</string>
+    <string name="time_b">6 meses</string>
+    <string name="time_c">3-4 meses</string>
+
+    <string name="location_a">Madrid, Spain</string>
+    <string name="location_b">Berlin, Deutschland</string>
+    <string name="location_c">Paris, France</string>
+</resources>
