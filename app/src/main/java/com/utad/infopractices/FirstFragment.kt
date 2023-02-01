@@ -7,7 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import androidx.navigation.fragment.findNavController
-import java.util.zip.Inflater
 
 class FirstFragment : Fragment() {
 

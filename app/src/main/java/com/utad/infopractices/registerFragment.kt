@@ -57,12 +57,6 @@ class registerFragment : Fragment() {
     }
 
     fun guardar(){
-        val iRegister = Intent(cosas.context, LoginFragment::class.java)
-        iRegister.putExtra("Email", binding.editTextMailRegister.text.toString())
-        iRegister.putExtra("Password", binding.editTextPwdRegister.text.toString())
-        iRegister.putExtra("Email Confirm", binding.editTextConfirmMail.text.toString())
-        iRegister.putExtra("Password Confirm", binding.editTextPwdConfirm.text.toString())
-        startActivity(iRegister)
         findNavController().navigate(R.id.action_registerFragment_to_loginFragment)
     }
 

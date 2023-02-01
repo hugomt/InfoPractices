@@ -43,6 +43,15 @@
         android:id="@+id/practicesFragment"
         android:name="com.utad.infopractices.practicesFragment"
         android:label="fragment_practices"
-        tools:layout="@layout/fragment_practices" />
+        tools:layout="@layout/fragment_practices" >
+        <action
+            android:id="@+id/action_practicesFragment_to_practicesDetails"
+            app:destination="@id/practicesDetails" />
+    </fragment>
+    <fragment
+        android:id="@+id/practicesDetails"
+        android:name="com.utad.infopractices.PracticesDetails"
+        android:label="fragment_practices_details"
+        tools:layout="@layout/fragment_practices_details" />
 
 </navigation>

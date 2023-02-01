@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import androidx.navigation.NavController
+import androidx.navigation.Navigation
 import androidx.navigation.fragment.NavHostFragment
 
 class MainActivity : AppCompatActivity() {
@@ -19,7 +20,6 @@ class MainActivity : AppCompatActivity() {
         val navHostCFragment = supportFragmentManager
             .findFragmentById(R.id.fragment_main) as NavHostFragment
         navController = navHostCFragment.navController
-
 
     }
 
