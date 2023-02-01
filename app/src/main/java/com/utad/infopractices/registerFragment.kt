@@ -58,9 +58,12 @@ class registerFragment : Fragment() {
                     txtError.text = "Las contraseñas no coinciden"
                     return@setOnClickListener
                 }
-            txtError.setTextColor(Color.GREEN)
-            txtError.text = "Usuario registrado correctamente"
-            findNavController().navigate(R.id.action_registerFragment_to_loginFragment)
+            val email = mailTxt.text.toString()
+            val bundle = Bundle()
+            bundle.putString("email", email)
+            val anotherFragment = LoginFragment()
+            anotherFragment.arguments = bundle
+            findNavController().navigate(R.id.action_registerFragment_to_loginFragment, bundle)
         }
         return view
     }

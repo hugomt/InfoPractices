@@ -16,7 +16,7 @@
         android:src="@drawable/usericon" />
 
     <EditText
-        android:id="@+id/editTextMailLogin"
+        android:id="@+id/mailTxt"
         android:layout_width="286dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
@@ -26,7 +26,7 @@
         android:inputType="textPersonName" />
 
     <EditText
-        android:id="@+id/editTextPwdLogin"
+        android:id="@+id/pwdTxt"
         android:layout_width="285dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
@@ -34,6 +34,16 @@
         android:ems="10"
         android:hint="Password"
         android:inputType="textPassword" />
+
+    <TextView
+        android:id="@+id/txtError"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="435dp"
+        android:textColor="#FF0000"
+        android:textSize="15sp"
+        android:gravity="center" />
 
     <Button
         android:id="@+id/loginBtn"
