@@ -14,4 +14,8 @@
     <string name="location_a">Madrid, Spain</string>
     <string name="location_b">Berlin, Deutschland</string>
     <string name="location_c">Paris, France</string>
+
+    <string name="description_a">Descripcion neoris</string>
+    <string name="description_b">Descripcion accenture</string>
+    <string name="description_c">Descripcion deloitte</string>
 </resources>

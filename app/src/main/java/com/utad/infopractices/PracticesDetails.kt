@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.TextView
 import com.utad.infopractices.databinding.FragmentPracticesDetailsBinding
 import org.w3c.dom.Text
@@ -22,9 +23,12 @@ class PracticesDetails : Fragment() {
     ): View? {
         val view = inflater.inflate(R.layout.fragment_practices_details, container, false)
         cardData = requireArguments().getParcelable("pratices")!!
-        val detalle = view.findViewById<TextView>(R.id.empresaDetail)
 
-        detalle.text = cardData.Company
+        val descripcion = view.findViewById<TextView>(R.id.empresaDescription)
+        val imagen = view.findViewById<ImageView>(R.id.imageDetail)
+
+        descripcion.text = cardData.description
+        imagen.setImageResource(cardData.Image)
 
         return view
     }
