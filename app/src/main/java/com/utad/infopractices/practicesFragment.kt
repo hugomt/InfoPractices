@@ -93,4 +93,11 @@ class practicesFragment : Fragment() {
 
 
     }
+
+    companion object {
+        fun newInstance() = practicesFragment().apply {
+            arguments = Bundle().apply {
+            }
+        }
+    }
 }

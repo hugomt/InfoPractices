@@ -1,5 +1,6 @@
 package com.utad.infopractices
 
+import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -52,5 +53,7 @@ class PracticesAdapter( private val practicesList: ArrayList<Practices>) : Recyc
 
 
     }
+
+
 
 }

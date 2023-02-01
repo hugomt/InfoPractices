@@ -8,6 +8,8 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
+import androidx.navigation.fragment.findNavController
 import com.utad.infopractices.databinding.FragmentPracticesDetailsBinding
 import org.w3c.dom.Text
 
@@ -26,6 +28,16 @@ class PracticesDetails : Fragment() {
 
         val descripcion = view.findViewById<TextView>(R.id.empresaDescription)
         val imagen = view.findViewById<ImageView>(R.id.imageDetail)
+        val arrowImagen = view.findViewById<ImageView>(R.id.imageView9)
+
+        arrowImagen.setOnClickListener {
+            val practicesFragment = practicesFragment.newInstance()
+            val activity = it.context as AppCompatActivity
+            val transaction =  activity.supportFragmentManager?.beginTransaction()
+            transaction?.add(R.id.practicesDetails, practicesFragment)
+            transaction?.addToBackStack(null)
+            transaction?.commit()
+        }
 
         descripcion.text = cardData.description
         imagen.setImageResource(cardData.Image)
