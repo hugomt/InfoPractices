@@ -3,6 +3,7 @@ package com.utad.infopractices
 import android.os.Parcel
 import android.os.Parcelable
 
+
 data class Practices(val Image : Int, val Company : String, val Time : String, val locationImage : Int, val locationText : String) :
 
     Parcelable {
