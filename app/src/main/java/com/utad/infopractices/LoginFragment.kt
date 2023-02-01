@@ -33,11 +33,11 @@ class LoginFragment : Fragment() {
 
         loginBtn.setOnClickListener {
             if(mailTxt.text.toString().isEmpty()){
-                txtError.text = "El correo es requerido"
+                txtError.text = "Mail is required"
                 return@setOnClickListener
             }
             if(pwdTxt.text.toString().isEmpty()){
-                txtError.text = "La contraseña es requerida"
+                txtError.text = "Password is required"
                 return@setOnClickListener
             }
             findNavController().navigate(R.id.action_loginFragment_to_practicesFragment)

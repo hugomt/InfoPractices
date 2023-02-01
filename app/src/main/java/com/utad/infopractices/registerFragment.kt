@@ -27,35 +27,35 @@ class registerFragment : Fragment() {
 
         registerBtn.setOnClickListener {
                 if(mailTxt.text.toString().isEmpty()){
-                    txtError.text = "El correo es requerido"
+                    txtError.text = "Mail is required"
                     return@setOnClickListener
                 }
                 if(mailConfirmTxt.text.toString().isEmpty()){
-                    txtError.text = "La confirmación de correo es requerida"
+                    txtError.text = "Email confirmation is required"
                     return@setOnClickListener
                 }
                 if(pwdTxt.text.toString().isEmpty()){
-                    txtError.text = "La contraseña es requerida"
+                    txtError.text = "Mail is required"
                     return@setOnClickListener
                 }
                 if(pwdConfirmTxt.text.toString().isEmpty()){
-                    txtError.text = "La confirmación de contraseña es requerida"
+                    txtError.text = "Password confirmation is required"
                     return@setOnClickListener
                 }
                 if(!android.util.Patterns.EMAIL_ADDRESS.matcher(mailTxt.text.toString()).matches()){
-                    txtError.text = "El correo no es válido"
+                    txtError.text = "The mail is invalid"
                     return@setOnClickListener
                 }
                 if(mailTxt.text.toString() != mailConfirmTxt.text.toString()){
-                    txtError.text = "Los correos no coinciden"
+                    txtError.text = "Mails do not match"
                     return@setOnClickListener
                 }
                 if(pwdTxt.text.toString().length < 6){
-                    txtError.text = "La contraseña debe tener al menos 6 caracteres"
+                    txtError.text = "The password must be at least 6 characters long"
                     return@setOnClickListener
                 }
                 if(pwdTxt.text.toString() != pwdConfirmTxt.text.toString()){
-                    txtError.text = "Las contraseñas no coinciden"
+                    txtError.text = "Passwords do not match"
                     return@setOnClickListener
                 }
             val email = mailTxt.text.toString()
