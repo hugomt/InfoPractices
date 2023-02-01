@@ -51,12 +51,14 @@ class registerFragment : Fragment() {
             }
         }
     }
+
     override  fun onDestroyView() {
         super.onDestroyView()
         _binding = null
     }
 
     fun guardar(){
+
         findNavController().navigate(R.id.action_registerFragment_to_loginFragment)
     }
 

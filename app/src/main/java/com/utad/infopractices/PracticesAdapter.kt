@@ -8,6 +8,7 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.FragmentActivity
 import androidx.recyclerview.widget.RecyclerView
+import javax.xml.xpath.XPathFactory.newInstance
 
 class PracticesAdapter( private val practicesList: ArrayList<Practices>) : RecyclerView.Adapter<PracticesAdapter.MyViewHolder>() {
 
@@ -24,9 +25,16 @@ class PracticesAdapter( private val practicesList: ArrayList<Practices>) : Recyc
         holder.locationImage.setImageResource(currentItem.locationImage)
         holder.locationText.text = currentItem.locationText
         holder.itemView.setOnClickListener {
+            val cardData = Practices(currentItem.Image,currentItem.Company, currentItem.Time, currentItem.locationImage, currentItem.locationText)
+            val PracticesDetails = PracticesDetails.newInstance(cardData)
             val activity = it.context as AppCompatActivity
-            val PracticesDetails = PracticesDetails()
-            activity.supportFragmentManager.beginTransaction().replace(R.id.practicesFragment, PracticesDetails).addToBackStack(null).commit()
+
+            val transaction =  activity.supportFragmentManager?.beginTransaction()
+            transaction?.add(R.id.practicesFragment, PracticesDetails)
+            transaction?.addToBackStack(null)
+            transaction?.commit()
+
+            //activity.supportFragmentManager.beginTransaction().replace(R.id.practicesFragment, PracticesDetails).addToBackStack(null).commit()
         }
     }
 

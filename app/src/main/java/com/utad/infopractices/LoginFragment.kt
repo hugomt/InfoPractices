@@ -8,18 +8,30 @@ import android.view.ViewGroup
 import android.widget.Button
 import androidx.navigation.fragment.findNavController
 
+
 class LoginFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        val username = arguments?.getString("username")
         val view = inflater.inflate(R.layout.fragment_login, container, false)
         val loginBtn = view.findViewById<Button>(R.id.loginBtn)
         loginBtn.setOnClickListener{
             findNavController().navigate(R.id.action_loginFragment_to_practicesFragment)
         }
         return view
+    }
+
+    companion object {
+        fun newInstance(username: String): LoginFragment {
+            val fragment = LoginFragment()
+            val args = Bundle()
+            args.putString("username", username)
+            fragment.arguments = args
+            return fragment
+        }
     }
 
 

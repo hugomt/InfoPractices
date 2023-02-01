@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/nav_graph"
+    android:id="@+id/navGraph"
     xmlns:tools="http://schemas.android.com/tools"
     app:startDestination="@id/FirstFragment">
 
@@ -53,5 +53,15 @@
         android:name="com.utad.infopractices.PracticesDetails"
         android:label="fragment_practices_details"
         tools:layout="@layout/fragment_practices_details" />
+
+    <fragment
+        android:id="@+id/usernameFragment"
+        android:name="com.utad.infopractices.LoginFragment"
+        android:label="UsernameFragment"
+        tools:layout="@layout/fragment_login">
+        <argument
+            android:name="username"
+            app:argType="string" />
+    </fragment>
 
 </navigation>
