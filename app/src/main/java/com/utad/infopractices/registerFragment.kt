@@ -1,6 +1,6 @@
 package com.utad.infopractices
 
-import android.content.Intent
+import android.graphics.Color
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -8,58 +8,62 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import androidx.navigation.fragment.findNavController
-import com.utad.infopractices.databinding.FragmentRegisterBinding
 
 class registerFragment : Fragment() {
-
-    private var _binding: FragmentRegisterBinding?  = null
-    private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentRegisterBinding.inflate(inflater, container, false)
-        return binding.root
+        val view = inflater.inflate(R.layout.fragment_register, container, false)
+        val mailTxt = view.findViewById<TextView>(R.id.mailTxt)
+        val mailConfirmTxt = view.findViewById<TextView>(R.id.mailConfirmTxt)
+        val pwdTxt = view.findViewById<EditText>(R.id.pwdTxt)
+        val pwdConfirmTxt = view.findViewById<EditText>(R.id.pwdConfirmTxt)
+        val registerBtn = view.findViewById<Button>(R.id.registerBtn)
+        val txtError = view.findViewById<TextView>(R.id.txtError)
 
-    }
-
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
-        val txt_Email_R = binding.editTextConfirmMail
-        val txt_Pass_R = binding.editTextPwdRegister
-        val txt_Emailc_R = binding.editTextConfirmMail
-        val txt_Passc_R = binding.editTextPwdConfirm
-        val aviso_R = binding.txtAvisoR
-        binding.registerBtn.setOnClickListener {
-            val email_text_R = txt_Email_R.text.toString()
-            val email_pass_R = txt_Pass_R.text.toString()
-            val email_textc_R = txt_Emailc_R.text.toString()
-            val email_passc_R = txt_Passc_R.text.toString()
-
-            if (email_text_R.isEmpty() || email_pass_R.isEmpty() || email_textc_R.isEmpty() || email_passc_R.isEmpty()) {
-                aviso_R.text = "Por favor rellene todos los campos"
-            } else {
-                if (email_text_R != email_textc_R || email_pass_R != email_passc_R) {
-                    aviso_R.text = "Los campos no conciden"
-                } else {
-                    guardar()
+        registerBtn.setOnClickListener {
+                if(mailTxt.text.toString().isEmpty()){
+                    txtError.text = "El correo es requerido"
+                    return@setOnClickListener
                 }
-            }
+                if(mailConfirmTxt.text.toString().isEmpty()){
+                    txtError.text = "La confirmación de correo es requerida"
+                    return@setOnClickListener
+                }
+                if(pwdTxt.text.toString().isEmpty()){
+                    txtError.text = "La contraseña es requerida"
+                    return@setOnClickListener
+                }
+                if(pwdConfirmTxt.text.toString().isEmpty()){
+                    txtError.text = "La confirmación de contraseña es requerida"
+                    return@setOnClickListener
+                }
+                if(!android.util.Patterns.EMAIL_ADDRESS.matcher(mailTxt.text.toString()).matches()){
+                    txtError.text = "El correo no es válido"
+                    return@setOnClickListener
+                }
+                if(mailTxt.text.toString() != mailConfirmTxt.text.toString()){
+                    txtError.text = "Los correos no coinciden"
+                    return@setOnClickListener
+                }
+                if(pwdTxt.text.toString().length < 6){
+                    txtError.text = "La contraseña debe tener al menos 6 caracteres"
+                    return@setOnClickListener
+                }
+                if(pwdTxt.text.toString() != pwdConfirmTxt.text.toString()){
+                    txtError.text = "Las contraseñas no coinciden"
+                    return@setOnClickListener
+                }
+            txtError.setTextColor(Color.GREEN)
+            txtError.text = "Usuario registrado correctamente"
+            findNavController().navigate(R.id.action_registerFragment_to_loginFragment)
         }
+        return view
     }
 
-    override  fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
-    }
-
-    fun guardar(){
-
-        findNavController().navigate(R.id.action_registerFragment_to_loginFragment)
-    }
 
 }
