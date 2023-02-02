@@ -19,7 +19,6 @@ class practicesFragment : Fragment() {
     lateinit var imageId : Array<Int>
     lateinit var companyName : Array<String>
     lateinit var time : Array<String>
-    lateinit var locationImage : Array<Int>
     lateinit var locationTxt : Array<String>
     lateinit var description : Array<String>
     lateinit var home : Array<String>
@@ -75,13 +74,6 @@ class practicesFragment : Fragment() {
             getString(R.string.time_e)
         )
 
-        locationImage = arrayOf(
-            R.drawable.locationlogo,
-            R.drawable.locationlogo,
-            R.drawable.locationlogo,
-            R.drawable.locationlogo,
-            R.drawable.locationlogo
-        )
 
         locationTxt = arrayOf(
             getString(R.string.location_a),
@@ -125,7 +117,7 @@ class practicesFragment : Fragment() {
 
         for (i in imageId.indices) {
 
-            val practices = Practices(imageId[i],companyName[i],time[i],locationImage[i],locationTxt[i], description[i], home[i], salary[i], paper[i])
+            val practices = Practices(imageId[i],companyName[i],time[i],locationTxt[i], description[i], home[i], salary[i], paper[i])
             practicesArrayList.add(practices)
         }
 

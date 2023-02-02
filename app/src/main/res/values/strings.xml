@@ -24,8 +24,13 @@
     <string name="description_a">
         Programmer practices at Neoris involve utilizing technical skills to design,
         develop, and maintain software systems. These practices include following best coding standards, conducting
-        code reviews, performing testing and debugging, and collaborating with cross-functional teams. The focus is
+        code reviews, performing testing and debugging, and collaborating with cross-functional teams.
+        \n
+        \n
+        The focus is
         on delivering high-quality software solutions that meet business requirements and exceed customer expectations.
+        \n
+        \n
         Programmers at Neoris should have a strong understanding of programming languages and software development
         methodologies, and be able to work in a fast-paced, dynamic environment.
     </string>
@@ -33,38 +38,68 @@
         Programmer practices at Accenture involve utilizing cutting-edge technologies and
         best practices to develop innovative software solutions. These practices include following industry standards
         and guidelines, working with cross-functional teams, continuously learning and improving technical skills, and
-        delivering high-quality, reliable software. Accenture programmers should be adaptable and have a strong
+        delivering high-quality, reliable software.
+        \n
+        \n
+        Accenture programmers should be adaptable and have a strong
         understanding of various programming languages and software development methodologies. They should also be
         proactive in identifying and solving problems, and have a passion for delivering exceptional customer
-        experiences. With a focus on innovation and collaboration, Accenture programmers are key to driving business
+        experiences.
+        \n
+        \n
+        With a focus on innovation and collaboration, Accenture programmers are key to driving business
         growth and success.
     </string>
     <string name="description_c">
         Programmer practices at Deloitte focus on delivering high-quality software solutions
         that drive business value. This involves utilizing a collaborative, cross-functional approach and staying
-        up-to-date with the latest technologies and programming languages. Deloitte programmers are expected to have a
+        up-to-date with the latest technologies and programming languages.
+        \n
+        \n
+        Deloitte programmers are expected to have a
         strong understanding of software development methodologies and the ability to work effectively with project teams.
         They should also be committed to continuous improvement, both in terms of their own skills and the software they
-        are developing. With a focus on delivering innovative solutions and exceeding client expectations, Deloitte
+        are developing.
+        \n
+        \n
+        With a focus on delivering innovative solutions and exceeding client expectations, Deloitte
         programmers play a critical role in driving business success.
     </string>
     <string name="description_d">
         Programmer practices at Telefónica are focused on delivering cutting-edge software
         solutions that meet the needs of the business and its customers. This involves staying up-to-date with the latest
         technologies, programming languages, and software development methodologies, as well as working closely with
-        cross-functional teams. Telefónica programmers are expected to have strong technical skills and be able to work
+        cross-functional teams.
+        \n
+        \n
+        Telefónica programmers are expected to have strong technical skills and be able to work
         effectively under pressure in a fast-paced environment. They should also be proactive in identifying and solving
-        problems, and be committed to continuous learning and improvement. With a focus on delivering high-quality, reliable
+        problems, and be committed to continuous learning and improvement.
+        \n
+        \n
+        With a focus on delivering high-quality, reliable
         software solutions, Telefónica programmers are key to the company\'s success and growth.
     </string>
     <string name="description_e">
         Programmer practices at Indra focus on delivering innovative software solutions that drive business value. This involves
         utilizing a collaborative, cross-functional approach, staying up-to-date with the latest technologies and programming
-        languages, and continuously learning and improving technical skills. Indra programmers are expected to have a strong
+        languages, and continuously learning and improving technical skills.
+        \n
+        \n
+        Indra programmers are expected to have a strong
         understanding of software development methodologies and the ability to work effectively with project teams. They should
         also be proactive in identifying and solving problems, and be committed to delivering high-quality software solutions that
-        meet business requirements and exceed customer expectations. With a focus on innovation and collaboration, Indra programmers
+        meet business requirements and exceed customer expectations.
+        \n
+        \n
+        With a focus on innovation and collaboration, Indra programmers
         play a critical role in driving business success.
+	<ul>
+            <li>2 year experience in Kotlin</li>
+            <li>Noticias</li>
+            <li>Artículos</li>
+            <li>Contacto</li>
+        </ul>
     </string>
 
     <string name="home_a">On-site</string>

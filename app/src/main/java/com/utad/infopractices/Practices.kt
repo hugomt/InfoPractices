@@ -4,14 +4,13 @@ import android.os.Parcel
 import android.os.Parcelable
 
 
-data class Practices(val Image : Int, val Company : String, val Time : String, val locationImage : Int, val locationText : String, val description : String,  val home : String,  val salary : String,  val paper : String) :
+data class Practices(val Image : Int, val Company : String, val Time : String, val locationText : String, val description : String,  val home : String,  val salary : String,  val paper : String) :
 
     Parcelable {
     constructor(parcel: Parcel) : this(
         parcel.readInt(),
         parcel.readString().toString(),
         parcel.readString().toString(),
-        parcel.readInt(),
         parcel.readString().toString(),
         parcel.readString().toString(),
         parcel.readString().toString(),
