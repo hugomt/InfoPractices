@@ -80,7 +80,7 @@
                     android:layout_weight="1"
                     android:paddingTop="1dp"
                     android:text="Madrid, España"
-                    android:textColor="#969696" />
+                    android:textColor="#7E7E7E" />
             </LinearLayout>
 
             <LinearLayout
@@ -103,7 +103,7 @@
                     android:layout_weight="1"
                     android:paddingTop="1dp"
                     android:text="Presencial"
-                    android:textColor="#969696" />
+                    android:textColor="#7E7E7E" />
             </LinearLayout>
 
             <LinearLayout
@@ -126,7 +126,7 @@
                     android:layout_weight="1"
                     android:paddingTop="1dp"
                     android:text="12.000€ - 28.000€ Bruto/año"
-                    android:textColor="#969696" />
+                    android:textColor="#7E7E7E" />
             </LinearLayout>
 
             <LinearLayout
@@ -149,7 +149,7 @@
                     android:layout_weight="1"
                     android:paddingTop="1dp"
                     android:text="Jornada completa"
-                    android:textColor="#969696" />
+                    android:textColor="#7E7E7E" />
             </LinearLayout>
 
             <LinearLayout
@@ -186,13 +186,22 @@
                 <TextView
                     android:id="@+id/empresaDescription"
                     android:layout_width="match_parent"
-                    android:layout_height="668dp"
+                    android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
                     android:layout_marginLeft="5dp"
                     android:layout_marginTop="10dp"
 
-                    android:text="Descripcion"
+                    android:text="Description"
                     android:textAlignment="textStart" />
+
+                <Button
+                    android:id="@+id/applyButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:text="Apply" />
             </LinearLayout>
 
         </LinearLayout>
