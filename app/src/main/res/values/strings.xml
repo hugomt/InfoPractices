@@ -6,16 +6,24 @@
     <string name="practices_a">Neoris</string>
     <string name="practices_b">Accenture</string>
     <string name="practices_c">Deloitte</string>
+    <string name="practices_d">Telefónica</string>
+    <string name="practices_e">Indra</string>
 
     <string name="time_a">3 meses</string>
     <string name="time_b">6 meses</string>
     <string name="time_c">3-4 meses</string>
+    <string name="time_d">1-2 meses</string>
+    <string name="time_e">5-6 meses</string>
 
     <string name="location_a">Madrid, Spain</string>
     <string name="location_b">Berlin, Deutschland</string>
     <string name="location_c">Paris, France</string>
+    <string name="location_d">Helsinki, Finland</string>
+    <string name="location_e">Oslo, Norway</string>
 
-    <string name="description_a">Descripcion neoris</string>
-    <string name="description_b">Descripcion accenture</string>
-    <string name="description_c">Descripcion deloitte</string>
+    <string name="description_a">Descripción neoris</string>
+    <string name="description_b">Descripción accenture</string>
+    <string name="description_c">Descripción deloitte</string>
+    <string name="description_d">Descripción telefónica</string>
+    <string name="description_e">Descripción indra</string>
 </resources>

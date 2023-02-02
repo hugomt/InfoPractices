@@ -28,7 +28,6 @@ class practicesFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_practices, container, false)
     }
 
@@ -53,21 +52,29 @@ class practicesFragment : Fragment() {
             R.drawable.neoris,
             R.drawable.accenture,
             R.drawable.deloitte,
+            R.drawable.telefonica2,
+            R.drawable.indra
         )
 
         companyName = arrayOf(
             getString(R.string.practices_a),
             getString(R.string.practices_b),
-            getString(R.string.practices_c)
+            getString(R.string.practices_c),
+            getString(R.string.practices_d),
+            getString(R.string.practices_e)
         )
 
         time = arrayOf(
             getString(R.string.time_a),
             getString(R.string.time_b),
-            getString(R.string.time_c)
+            getString(R.string.time_c),
+            getString(R.string.time_d),
+            getString(R.string.time_e)
         )
 
         locationImage = arrayOf(
+            R.drawable.locationlogo,
+            R.drawable.locationlogo,
             R.drawable.locationlogo,
             R.drawable.locationlogo,
             R.drawable.locationlogo
@@ -76,13 +83,17 @@ class practicesFragment : Fragment() {
         locationTxt = arrayOf(
             getString(R.string.location_a),
             getString(R.string.location_b),
-            getString(R.string.location_c)
+            getString(R.string.location_c),
+            getString(R.string.location_d),
+            getString(R.string.location_e)
         )
 
         description = arrayOf(
             getString(R.string.description_a),
             getString(R.string.description_b),
-            getString(R.string.description_c)
+            getString(R.string.description_c),
+            getString(R.string.description_d),
+            getString(R.string.description_e)
         )
 
         for (i in imageId.indices) {
