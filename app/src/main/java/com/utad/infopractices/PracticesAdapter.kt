@@ -1,15 +1,12 @@
 package com.utad.infopractices
 
-import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.fragment.app.FragmentActivity
 import androidx.recyclerview.widget.RecyclerView
-import javax.xml.xpath.XPathFactory.newInstance
 
 class PracticesAdapter( private val practicesList: ArrayList<Practices>) : RecyclerView.Adapter<PracticesAdapter.MyViewHolder>() {
 
@@ -33,13 +30,10 @@ class PracticesAdapter( private val practicesList: ArrayList<Practices>) : Recyc
             val cardData = Practices(currentItem.Image,currentItem.Company, currentItem.Time, currentItem.locationImage, currentItem.locationText, description, home,salary,paper)
             val PracticesDetails = PracticesDetails.newInstance(cardData)
             val activity = it.context as AppCompatActivity
-
             val transaction =  activity.supportFragmentManager?.beginTransaction()
-            transaction?.add(R.id.practicesFragment, PracticesDetails)
+            transaction?.replace(R.id.practicesFragment, PracticesDetails)
             transaction?.addToBackStack(null)
             transaction?.commit()
-
-            //activity.supportFragmentManager.beginTransaction().replace(R.id.practicesFragment, PracticesDetails).addToBackStack(null).commit()
         }
     }
 

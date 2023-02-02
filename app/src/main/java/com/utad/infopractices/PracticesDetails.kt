@@ -37,6 +37,7 @@ class PracticesDetails : Fragment() {
         val salary = view.findViewById<TextView>(R.id.salaryDetail)
         val paper = view.findViewById<TextView>(R.id.contratoDetail)
         val ubication = view.findViewById<TextView>(R.id.locationDetail)
+        val applyButton = view.findViewById<Button>(R.id.applyButton)
 
         arrowImagen.setOnClickListener {
             val practicesFragment = practicesFragment.newInstance()
@@ -59,6 +60,14 @@ class PracticesDetails : Fragment() {
             }
         }
 
+        applyButton.setOnClickListener {
+            val activity = it.context as AppCompatActivity
+            val transaction =  activity.supportFragmentManager?.beginTransaction()
+            transaction?.replace(R.id.practicesDetails, applyFragment())
+            transaction?.addToBackStack(null)
+            transaction?.commit()
+        }
+
         descripcion.text = cardData.description
         imagen.setImageResource(cardData.Image)
         home.text = cardData.home
@@ -71,9 +80,9 @@ class PracticesDetails : Fragment() {
     }
 
     companion object {
-        fun newInstance(pratices: Practices) = PracticesDetails().apply {
+        fun newInstance(practices: Practices) = PracticesDetails().apply {
             arguments = Bundle().apply {
-                putParcelable("pratices", pratices)
+                putParcelable("pratices", practices)
             }
         }
     }

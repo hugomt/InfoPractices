@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/applyFragment"
+    tools:context=".applyFragment"
+    android:background="#F1F1F1">
+
+    <ImageView
+        android:id="@+id/arrowImage"
+        android:layout_width="48dp"
+        android:layout_height="38dp"
+        android:layout_marginTop="6dp"
+        android:src="@drawable/arrow" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Apply Fragment"
+        android:layout_centerInParent="true"
+        android:textStyle="bold"
+        android:textColor="@color/blue" />
+
+</RelativeLayout>
