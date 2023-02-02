@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.navigation.fragment.findNavController
 
@@ -20,6 +21,7 @@ class LoginFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.fragment_login, container, false)
+        val imageView = view.findViewById<ImageView>(R.id.loginimage)
         val loginBtn = view.findViewById<Button>(R.id.loginBtn)
         val mailTxt = view.findViewById<EditText>(R.id.mailTxt)
         val pwdTxt = view.findViewById<EditText>(R.id.pwdTxt)
@@ -28,6 +30,11 @@ class LoginFragment : Fragment() {
         val email = arguments?.getString("email")
         if (email != null) {
             mailTxt.setText(email)
+        }
+
+        imageView.setOnClickListener {
+            mailTxt.setText("prueba@example.com")
+            pwdTxt.setText("password")
         }
 
 

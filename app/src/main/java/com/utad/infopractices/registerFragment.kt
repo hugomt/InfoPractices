@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.navigation.fragment.findNavController
 
@@ -18,12 +19,20 @@ class registerFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.fragment_register, container, false)
+        val imageView = view.findViewById<ImageView>(R.id.loginimage)
         val mailTxt = view.findViewById<TextView>(R.id.mailTxt)
         val mailConfirmTxt = view.findViewById<TextView>(R.id.mailConfirmTxt)
         val pwdTxt = view.findViewById<EditText>(R.id.pwdTxt)
         val pwdConfirmTxt = view.findViewById<EditText>(R.id.pwdConfirmTxt)
         val registerBtn = view.findViewById<Button>(R.id.registerBtn)
         val txtError = view.findViewById<TextView>(R.id.txtError)
+
+        imageView.setOnClickListener {
+            mailTxt.setText("prueba@example.com")
+            mailConfirmTxt.setText("prueba@example.com")
+            pwdTxt.setText("password")
+            pwdConfirmTxt.setText("password")
+        }
 
         registerBtn.setOnClickListener {
                 if(mailTxt.text.toString().isEmpty()){
@@ -35,7 +44,7 @@ class registerFragment : Fragment() {
                     return@setOnClickListener
                 }
                 if(pwdTxt.text.toString().isEmpty()){
-                    txtError.text = "Mail is required"
+                    txtError.text = "Password is required"
                     return@setOnClickListener
                 }
                 if(pwdConfirmTxt.text.toString().isEmpty()){
