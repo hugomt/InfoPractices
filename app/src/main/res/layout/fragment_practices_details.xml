@@ -192,7 +192,7 @@
                     android:layout_marginTop="10dp"
 
                     android:text="Description"
-                    android:textAlignment="textStart" />
+                    android:textAlignment="viewStart" />
 
                 <Button
                     android:id="@+id/applyButton"
