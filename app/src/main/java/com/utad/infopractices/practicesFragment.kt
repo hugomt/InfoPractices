@@ -22,6 +22,9 @@ class practicesFragment : Fragment() {
     lateinit var locationImage : Array<Int>
     lateinit var locationTxt : Array<String>
     lateinit var description : Array<String>
+    lateinit var home : Array<String>
+    lateinit var salary : Array<String>
+    lateinit var paper : Array<String>
 
 
     override fun onCreateView(
@@ -52,7 +55,7 @@ class practicesFragment : Fragment() {
             R.drawable.neoris,
             R.drawable.accenture,
             R.drawable.deloitte,
-            R.drawable.telefonica2,
+            R.drawable.telefonica3,
             R.drawable.indra
         )
 
@@ -96,9 +99,33 @@ class practicesFragment : Fragment() {
             getString(R.string.description_e)
         )
 
+        home = arrayOf(
+            getString(R.string.home_a),
+            getString(R.string.home_b),
+            getString(R.string.home_c),
+            getString(R.string.home_d),
+            getString(R.string.home_e)
+        )
+
+        salary = arrayOf(
+            getString(R.string.salary_a),
+            getString(R.string.salary_b),
+            getString(R.string.salary_c),
+            getString(R.string.salary_d),
+            getString(R.string.salary_e)
+        )
+
+        paper = arrayOf(
+            getString(R.string.paper_a),
+            getString(R.string.paper_b),
+            getString(R.string.paper_c),
+            getString(R.string.paper_d),
+            getString(R.string.paper_e)
+        )
+
         for (i in imageId.indices) {
 
-            val practices = Practices(imageId[i],companyName[i],time[i],locationImage[i],locationTxt[i], description[i])
+            val practices = Practices(imageId[i],companyName[i],time[i],locationImage[i],locationTxt[i], description[i], home[i], salary[i], paper[i])
             practicesArrayList.add(practices)
         }
 

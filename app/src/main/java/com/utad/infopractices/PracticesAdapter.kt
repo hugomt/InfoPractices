@@ -26,8 +26,11 @@ class PracticesAdapter( private val practicesList: ArrayList<Practices>) : Recyc
         holder.locationImage.setImageResource(currentItem.locationImage)
         holder.locationText.text = currentItem.locationText
         val description = currentItem.description
+        val home = currentItem.home
+        val salary = currentItem.salary
+        val paper = currentItem.paper
         holder.itemView.setOnClickListener {
-            val cardData = Practices(currentItem.Image,currentItem.Company, currentItem.Time, currentItem.locationImage, currentItem.locationText, description)
+            val cardData = Practices(currentItem.Image,currentItem.Company, currentItem.Time, currentItem.locationImage, currentItem.locationText, description, home,salary,paper)
             val PracticesDetails = PracticesDetails.newInstance(cardData)
             val activity = it.context as AppCompatActivity
 

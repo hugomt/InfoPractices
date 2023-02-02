@@ -1,5 +1,6 @@
 package com.utad.infopractices
 
+import android.graphics.Color
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -9,6 +10,7 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.navigation.fragment.findNavController
 import com.utad.infopractices.databinding.FragmentPracticesDetailsBinding
 import org.w3c.dom.Text
@@ -17,6 +19,7 @@ class PracticesDetails : Fragment() {
 
     private lateinit var cardData: Practices
     private lateinit var binding: FragmentPracticesDetailsBinding
+
 
 
     override fun onCreateView(
@@ -29,6 +32,11 @@ class PracticesDetails : Fragment() {
         val descripcion = view.findViewById<TextView>(R.id.empresaDescription)
         val imagen = view.findViewById<ImageView>(R.id.imageDetail)
         val arrowImagen = view.findViewById<ImageView>(R.id.imageView9)
+        val buttonFollow = view.findViewById<Button>(R.id.buttonFollow)
+        val home = view.findViewById<TextView>(R.id.homeDetail)
+        val salary = view.findViewById<TextView>(R.id.salaryDetail)
+        val paper = view.findViewById<TextView>(R.id.contratoDetail)
+        val ubication = view.findViewById<TextView>(R.id.locationDetail)
 
         arrowImagen.setOnClickListener {
             val practicesFragment = practicesFragment.newInstance()
@@ -39,8 +47,25 @@ class PracticesDetails : Fragment() {
             transaction?.commit()
         }
 
+        buttonFollow.setOnClickListener {
+            if(buttonFollow.text == "+ Follow"){
+                buttonFollow.text = "- Unfollow"
+                buttonFollow.setTextColor(Color.WHITE)
+                buttonFollow.setBackgroundColor(ContextCompat.getColor(requireContext(), R.color.blue))
+            } else {
+                buttonFollow.text = "+ Follow"
+                buttonFollow.setTextColor(ContextCompat.getColor(requireContext(), R.color.blue))
+                buttonFollow.setBackgroundColor(ContextCompat.getColor(requireContext(), R.color.white))
+            }
+        }
+
         descripcion.text = cardData.description
         imagen.setImageResource(cardData.Image)
+        home.text = cardData.home
+        ubication.text = cardData.locationText
+        salary.text = cardData.salary
+        paper.text = cardData.paper
+
 
         return view
     }

@@ -46,15 +46,15 @@
 
                 <Button
                     android:id="@+id/buttonFollow"
-                    android:layout_width="70dp"
+                    android:layout_width="100dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="80dp"
                     android:layout_marginTop="19dp"
                     android:layout_marginRight="30dp"
-
                     android:layout_weight="1"
                     android:backgroundTint="#F1F1F1"
-                    android:text="Seguir"
+                    android:text="+ Follow"
+                    android:textSize="12dp"
                     android:textColor="#3263D6"
                     app:strokeColor="#3263D6"
                     app:strokeWidth="1.3dp" />
