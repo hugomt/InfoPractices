@@ -75,6 +75,120 @@
                 android:layout_height="wrap_content" />
 
         </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:text="Surname:"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/text_input_layout_outlined2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editTextOutlined2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:text="Phone: "
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/text_input_layout_outlined3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editTextOutlined3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/textView7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:text="Gender: "
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <RadioGroup
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="8dp"
+            android:layout_gravity="">
+
+            <RadioButton
+                android:id="@+id/radioButtonMale"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Male"
+                android:textColor="#505050" />
+
+            <RadioButton
+                android:id="@+id/radioButtonFemale"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:text="Female"
+                android:textColor="#505050" />
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:text="Education: "
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <Spinner
+            style="@style/spinner_style"
+            android:id="@+id/spinnerEducationLevel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints="Select an option"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:entries="@array/education_levels"
+            />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SUBMIT"
+            android:gravity="center"
+            android:layout_gravity="center" />
+
     </LinearLayout>
 
 </RelativeLayout>
