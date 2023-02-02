@@ -46,6 +46,8 @@ class PracticesDetails : Fragment() {
             transaction?.add(R.id.practicesDetails, practicesFragment)
             transaction?.addToBackStack(null)
             transaction?.commit()
+
+
         }
 
         buttonFollow.setOnClickListener {
@@ -61,6 +63,7 @@ class PracticesDetails : Fragment() {
         }
 
         applyButton.setOnClickListener {
+
             val activity = it.context as AppCompatActivity
             val transaction =  activity.supportFragmentManager?.beginTransaction()
             transaction?.replace(R.id.practicesDetails, applyFragment())
@@ -74,7 +77,6 @@ class PracticesDetails : Fragment() {
         ubication.text = cardData.locationText
         salary.text = cardData.salary
         paper.text = cardData.paper
-
 
         return view
     }

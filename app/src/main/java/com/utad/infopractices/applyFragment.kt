@@ -10,20 +10,20 @@ import androidx.appcompat.app.AppCompatActivity
 
 class applyFragment : Fragment() {
 
-    private lateinit var cardData: Practices
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.fragment_apply, container, false)
-        val arrowImage = view.findViewById<ImageView>(R.id.arrowImage)
-        val imageView = view.findViewById<ImageView>(R.id.empresaimage)
-        cardData = requireArguments().getParcelable("pratices")!!
 
-        imageView.setImageResource(cardData.Image)
+        val arrowImage = view.findViewById<ImageView>(R.id.arrowImage)
+
 
         return view
     }
+
+
 
 }
