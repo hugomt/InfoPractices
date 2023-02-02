@@ -120,4 +120,10 @@
     <string name="paper_c">Full time</string>
     <string name="paper_d">Part time</string>
     <string name="paper_e">Full time</string>
+
+    <string-array name="education_levels">
+        <item>Select and option</item>
+        <item>Professional training degree</item>
+        <item>University degree</item>
+    </string-array>
 </resources>
