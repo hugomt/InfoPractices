@@ -47,6 +47,10 @@ class LoginFragment : Fragment() {
                 txtError.text = "Password is required"
                 return@setOnClickListener
             }
+            if(!android.util.Patterns.EMAIL_ADDRESS.matcher(mailTxt.text.toString()).matches()){
+                txtError.text = "The mail is invalid"
+                return@setOnClickListener
+            }
             findNavController().navigate(R.id.action_loginFragment_to_practicesFragment)
         }
         return view
