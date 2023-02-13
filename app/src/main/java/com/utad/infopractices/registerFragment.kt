@@ -1,16 +1,23 @@
 package com.utad.infopractices
 
-import android.graphics.Color
+import android.content.Context
 import android.os.Bundle
-import androidx.fragment.app.Fragment
+import android.util.Log
+import android.util.Patterns
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.EditText
-import android.widget.ImageView
-import android.widget.TextView
+import android.widget.*
+import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import com.android.volley.Request
+import com.android.volley.RequestQueue
+import com.android.volley.Response
+import com.android.volley.toolbox.JsonObjectRequest
+import com.android.volley.toolbox.StringRequest
+import com.android.volley.toolbox.Volley
+import com.utad.infopractices.MainActivity
+import org.json.JSONObject
 
 class registerFragment : Fragment() {
 
@@ -51,7 +58,7 @@ class registerFragment : Fragment() {
                     txtError.text = "Password confirmation is required"
                     return@setOnClickListener
                 }
-                if(!android.util.Patterns.EMAIL_ADDRESS.matcher(mailTxt.text.toString()).matches()){
+                if(!Patterns.EMAIL_ADDRESS.matcher(mailTxt.text.toString()).matches()){
                     txtError.text = "The mail is invalid"
                     return@setOnClickListener
                 }
@@ -73,9 +80,25 @@ class registerFragment : Fragment() {
             val anotherFragment = LoginFragment()
             anotherFragment.arguments = bundle
             findNavController().navigate(R.id.action_registerFragment_to_loginFragment, bundle)
+            insertData(mailTxt.text.toString(), pwdTxt.text.toString())
         }
         return view
     }
-
-
+    private fun insertData(Email: String, Password: String) {
+        val url = "http://10.1.200.180/infopractices/insertar.php"
+        val queue = Volley.newRequestQueue(context)
+        val data = JSONObject()
+        data.put("email", Email)
+        data.put("password", Password)
+        val request = JsonObjectRequest(
+            Request.Method.POST, url, data,
+            Response.Listener { response ->
+                Log.d("Response", response.toString())
+            },
+            Response.ErrorListener { error ->
+                Log.d("Error", error.toString())
+            }
+        )
+        queue.add(request)
+    }
 }
