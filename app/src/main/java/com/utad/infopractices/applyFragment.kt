@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.*
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.google.android.material.textfield.TextInputLayout
 
 
@@ -58,6 +59,7 @@ class applyFragment : Fragment() {
                 return@setOnClickListener
             }
             txtError.text = ""
+            findNavController().popBackStack()
             Toast.makeText(context, "Saved application", Toast.LENGTH_SHORT).show()
         }
         return view
