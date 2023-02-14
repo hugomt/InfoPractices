@@ -89,12 +89,7 @@ class PracticesDetails : Fragment() {
             transaction?.commit()
         }
 
-        descripcion.text = cardData.description
-        imagen.setImageResource(cardData.Image)
-        home.text = cardData.home
-        ubication.text = cardData.locationText
-        salary.text = cardData.salary
-        paper.text = cardData.paper
+
 
         // Petición HTTP con Volley
         val queue = Volley.newRequestQueue(requireContext())
@@ -123,7 +118,12 @@ class PracticesDetails : Fragment() {
                 // Manejo de errores aquí
                 Log.d("Error", error.toString())
             })
-
+        descripcion.text = cardData.description
+        imagen.setImageResource(cardData.Image)
+        home.text = cardData.home
+        ubication.text = cardData.locationText
+        salary.text = cardData.salary
+        paper.text = cardData.paper
         // Agregamos la petición a la cola
         queue.add(stringRequest)
 
