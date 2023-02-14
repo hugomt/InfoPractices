@@ -99,7 +99,6 @@ class registerFragment : Fragment() {
                 Log.d("Error", error.toString())
             }
         )
-        Log.d(tag, "hola" + data.toString());
         queue.add(request)
     }
 }
