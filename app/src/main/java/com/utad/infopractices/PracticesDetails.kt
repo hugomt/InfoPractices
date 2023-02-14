@@ -2,6 +2,7 @@ package com.utad.infopractices
 
 import android.graphics.Color
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -12,7 +13,14 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.navigation.fragment.findNavController
+import com.android.volley.Request
+import com.android.volley.Response
+import com.android.volley.toolbox.JsonObjectRequest
+import com.android.volley.toolbox.StringRequest
+import com.android.volley.toolbox.Volley
 import com.utad.infopractices.databinding.FragmentPracticesDetailsBinding
+import org.json.JSONException
+import org.json.JSONObject
 import org.w3c.dom.Text
 
 class PracticesDetails : Fragment() {
@@ -42,7 +50,7 @@ class PracticesDetails : Fragment() {
         arrowImagen.setOnClickListener {
             val practicesFragment = practicesFragment.newInstance()
             val activity = it.context as AppCompatActivity
-            val transaction =  activity.supportFragmentManager?.beginTransaction()
+            val transaction = activity.supportFragmentManager?.beginTransaction()
             transaction?.add(R.id.practicesDetails, practicesFragment)
             transaction?.addToBackStack(null)
             transaction?.commit()
@@ -51,21 +59,31 @@ class PracticesDetails : Fragment() {
         }
 
         buttonFollow.setOnClickListener {
-            if(buttonFollow.text == "+ Follow"){
+            if (buttonFollow.text == "+ Follow") {
                 buttonFollow.text = "- Unfollow"
                 buttonFollow.setTextColor(Color.WHITE)
-                buttonFollow.setBackgroundColor(ContextCompat.getColor(requireContext(), R.color.blue))
+                buttonFollow.setBackgroundColor(
+                    ContextCompat.getColor(
+                        requireContext(),
+                        R.color.blue
+                    )
+                )
             } else {
                 buttonFollow.text = "+ Follow"
                 buttonFollow.setTextColor(ContextCompat.getColor(requireContext(), R.color.blue))
-                buttonFollow.setBackgroundColor(ContextCompat.getColor(requireContext(), R.color.white))
+                buttonFollow.setBackgroundColor(
+                    ContextCompat.getColor(
+                        requireContext(),
+                        R.color.white
+                    )
+                )
             }
         }
 
         applyButton.setOnClickListener {
 
             val activity = it.context as AppCompatActivity
-            val transaction =  activity.supportFragmentManager?.beginTransaction()
+            val transaction = activity.supportFragmentManager?.beginTransaction()
             transaction?.replace(R.id.practicesDetails, applyFragment())
             transaction?.addToBackStack(null)
             transaction?.commit()
@@ -78,9 +96,39 @@ class PracticesDetails : Fragment() {
         salary.text = cardData.salary
         paper.text = cardData.paper
 
+        // Petición HTTP con Volley
+        val queue = Volley.newRequestQueue(requireContext())
+        val url = "http://10.1.200.249/infopractices/obtener.php"
+
+        val stringRequest = StringRequest(
+            Request.Method.GET, url,
+            Response.Listener<String> { response ->
+                // Procesamiento de la respuesta aquí
+                Log.d("Response", response.toString())
+                try {
+                    // Parseo de la respuesta a un objeto JSON
+                    val jsonResponse = JSONObject(response)
+
+                    // Acceso a los datos desde el objeto JSON
+                    descripcion.text = jsonResponse.getString("description")
+                    home.text = jsonResponse.getString("home")
+                    ubication.text = jsonResponse.getString("ubication")
+                    salary.text = jsonResponse.getString("salary")
+                    paper.text = jsonResponse.getString("paper")
+                } catch (e: JSONException) {
+                    e.printStackTrace()
+                }
+            },
+            Response.ErrorListener { error ->
+                // Manejo de errores aquí
+                Log.d("Error", error.toString())
+            })
+
+        // Agregamos la petición a la cola
+        queue.add(stringRequest)
+
         return view
     }
-
     companion object {
         fun newInstance(practices: Practices) = PracticesDetails().apply {
             arguments = Bundle().apply {
@@ -88,6 +136,4 @@ class PracticesDetails : Fragment() {
             }
         }
     }
-
-
 }

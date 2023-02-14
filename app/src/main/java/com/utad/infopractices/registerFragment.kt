@@ -85,11 +85,11 @@ class registerFragment : Fragment() {
         return view
     }
     private fun insertData(Email: String, Password: String) {
-        val url = "http://10.1.200.180/infopractices/insertar.php"
+        val url = "http://10.1.200.249/infopractices/insertar.php"
         val queue = Volley.newRequestQueue(context)
         val data = JSONObject()
-        data.put("email", Email)
-        data.put("password", Password)
+        data.put("Email", Email)
+        data.put("Password", Password)
         val request = JsonObjectRequest(
             Request.Method.POST, url, data,
             Response.Listener { response ->
@@ -99,6 +99,7 @@ class registerFragment : Fragment() {
                 Log.d("Error", error.toString())
             }
         )
+        Log.d(tag, "hola" + data.toString());
         queue.add(request)
     }
 }
