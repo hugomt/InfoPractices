@@ -59,6 +59,7 @@ class applyFragment : Fragment() {
                 return@setOnClickListener
             }
             txtError.text = ""
+
             findNavController().popBackStack()
             Toast.makeText(context, "Saved application", Toast.LENGTH_SHORT).show()
         }
