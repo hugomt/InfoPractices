@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.google.android.material.textfield.TextInputLayout
@@ -60,7 +61,12 @@ class applyFragment : Fragment() {
             }
             txtError.text = ""
 
-            findNavController().popBackStack()
+            val practicesFragment = practicesFragment.newInstance()
+            val activity = it.context as AppCompatActivity
+            val transaction = activity.supportFragmentManager?.beginTransaction()
+            transaction?.add(R.id.practicesDetails, practicesFragment)
+            transaction?.addToBackStack(null)
+            transaction?.commit()
             Toast.makeText(context, "Saved application", Toast.LENGTH_SHORT).show()
         }
         return view
